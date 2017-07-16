@@ -1,0 +1,34 @@
+{
+  "name": "print-tree",
+  "version": "0.1.0",
+  "description": "prints any js data structure as a tree",
+  "main": "lib/index.js",
+  "repository": "alex-e-leon/print-tree",
+  "author": "alex leon <alex@leon.st>",
+  "license": "MIT",
+  "scripts": {
+    "build": "babel index.js -d lib/",
+    "prepublish": "yarn run build",
+    "lint": "./node_modules/.bin/eslint index.js",
+    "test": "yarn run flow && yarn run lint"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-eslint": "^7.2.3",
+    "babel-preset-flow": "^6.23.0",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb-base": "^11.2.0",
+    "eslint-plugin-flowtype": "^2.34.0",
+    "eslint-plugin-import": "^2.6.0",
+    "flow-bin": "^0.48.0",
+    "mocha": "^3.4.2"
+  },
+  "dependencies": {
+  },
+  "keywords": [
+    "console",
+    "tree",
+    "print",
+    "pretty"
+  ]
+}
