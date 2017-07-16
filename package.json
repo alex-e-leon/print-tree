@@ -1,6 +1,6 @@
 {
   "name": "print-tree",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "prints any js data structure as a tree",
   "main": "lib/index.js",
   "repository": "alex-e-leon/print-tree",
