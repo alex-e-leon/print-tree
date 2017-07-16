@@ -8,19 +8,18 @@ prints any js data structure as a tree
 $ npm install print-tree
 const printTree = require('print-tree');
 
-// head
-// ├─┬ branchA
-// | └── branchC
-// └── branchB
-
 const customTree = {
   name: 'head',
   children: [
-    { name: 'branchA' },
+    {
+      name: 'branchA'
+      children: [
+        { name: 'branchC' },
+      ],
+    },
     { name: 'branchB' },
   ],
 };
-
 
 printTree(
   customTree,
@@ -40,8 +39,7 @@ printTree(
 
 #### tree: *
 
-The object to traverse. Expects an object of objects during default execution,
-but it can be any tree-like structure if the optional functions are passed in.
+The object to traverse.
 
 #### printNode: function(node: *): string | function(node: *, branch: string): null
 
