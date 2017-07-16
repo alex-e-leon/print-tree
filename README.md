@@ -8,17 +8,6 @@ prints any js data structure as a tree
 $ npm install print-tree
 const printTree = require('print-tree');
 
-const objectTree = {
-  head: {
-    branchA: {
-      branchC: {},
-    },
-    branchB: {},
-  },
-};
-
-printTree(objectTree);
-
 // head
 // ├─┬ branchA
 // | └── branchC
@@ -56,9 +45,8 @@ but it can be any tree-like structure if the optional functions are passed in.
 
 #### printNode: function(node: *): string | function(node: *, branch: string): null
 
-An optional function to customize the output.
-By default `print-tree` will `console.log` the object keys of any nested objects.
-To change this behaviour you can pass in either:
+A function to customize the output.
+You can pass in either:
 
 - a function that takes the current node and returns the string representation.
 - a function that takes the current node and the branchGraphic and returns nothing -
@@ -66,5 +54,5 @@ To change this behaviour you can pass in either:
 
 #### getChildren: function(node: *): array
 
-An optional function to help `print-tree` traverse custom data structures.
+A function to help `print-tree` traverse custom data structures.
 It takes the current head of the tree/sub-tree and returns a list of the children

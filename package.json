@@ -10,7 +10,8 @@
     "build": "babel index.js -d lib/",
     "prepublish": "yarn run build",
     "lint": "./node_modules/.bin/eslint index.js",
-    "test": "yarn run flow && yarn run lint"
+    "test:unit": "mocha --compilers js:babel-core/register test",
+    "test": "yarn run flow && yarn run lint && yarn run test:unit"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
@@ -21,10 +22,10 @@
     "eslint-plugin-flowtype": "^2.34.0",
     "eslint-plugin-import": "^2.6.0",
     "flow-bin": "^0.48.0",
-    "mocha": "^3.4.2"
+    "mocha": "^3.4.2",
+    "sinon": "^2.3.8"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "keywords": [
     "console",
     "tree",
