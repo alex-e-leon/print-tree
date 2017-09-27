@@ -2,7 +2,7 @@
 
 /* eslint-disable no-console, prefer-template */
 
-type PrintNode<T> = (node: T, branch: ?string) => ?string;
+type PrintNode<T> = (node: T, branch: string) => ?string;
 type GetChildren<T> = (node: T) => Array<T>;
 
 function printTree<T>(
@@ -20,10 +20,10 @@ function printTree<T>(
       branchHead = children && children.length !== 0 ? '┬ ' : '─ ';
     }
 
-    if (printNode.length === 2) {
-      printNode(tree, `${branch}${branchHead}`);
-    } else {
-      console.log(`${branch}${branchHead}${printNode(tree) || ''}`);
+    const toPrint = printNode(tree, `${branch}${branchHead}`);
+
+    if (typeof toPrint === 'string') {
+      console.log(`${branch}${branchHead}${toPrint}`);
     }
 
     let baseBranch = branch;
