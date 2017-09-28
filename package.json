@@ -6,24 +6,31 @@
   "repository": "alex-e-leon/print-tree",
   "author": "alex leon <alex@leon.st>",
   "license": "MIT",
+  "files": [
+    "lib"
+  ],
   "scripts": {
     "build": "babel index.js -d lib/",
-    "prepublish": "yarn run build",
-    "lint": "./node_modules/.bin/eslint index.js",
-    "test:unit": "mocha --compilers js:babel-core/register test",
-    "test": "yarn run flow && yarn run lint && yarn run test:unit"
+    "prepare": "yarn build",
+    "lint": "eslint index.js test",
+    "test:watch": "ava --watch",
+    "test": "yarn flow && yarn lint && nyc ava",
+    "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov"
   },
   "devDependencies": {
-    "babel-cli": "^6.24.1",
-    "babel-eslint": "^7.2.3",
+    "ava": "^0.22.0",
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^8.0.1",
     "babel-plugin-transform-flow-comments": "^6.22.0",
-    "eslint": "^3.19.0",
-    "eslint-config-airbnb-base": "^11.2.0",
-    "eslint-plugin-flowtype": "^2.34.0",
-    "eslint-plugin-import": "^2.6.0",
-    "flow-bin": "^0.48.0",
-    "mocha": "^3.4.2",
-    "sinon": "^2.3.8"
+    "codecov": "^2.3.0",
+    "eslint": "^4.7.2",
+    "eslint-config-airbnb-base": "^12.0.0",
+    "eslint-plugin-ava": "^4.2.2",
+    "eslint-plugin-flowtype": "^2.36.0",
+    "eslint-plugin-import": "^2.7.0",
+    "flow-bin": "^0.55.0",
+    "nyc": "^11.2.1",
+    "sinon": "^4.0.0"
   },
   "dependencies": {},
   "keywords": [
@@ -31,5 +38,10 @@
     "tree",
     "print",
     "pretty"
-  ]
+  ],
+  "ava": {
+    "require": [
+      "babel-register"
+    ]
+  }
 }

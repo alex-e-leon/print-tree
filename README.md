@@ -41,7 +41,7 @@ printTree(
 
 The object to traverse.
 
-#### printNode: function(node: *): string | function(node: *, branch: string): null
+#### printNode: function<T>(node: T, branch: string): ?string
 
 A function to customize the output.
 You can pass in either:
@@ -50,7 +50,7 @@ You can pass in either:
 - a function that takes the current node and the branchGraphic and returns nothing -
     this lets you customize the ouput method
 
-#### getChildren: function(node: *): array
+#### getChildren: function<T>(node: T): Array<T>
 
 A function to help `print-tree` traverse custom data structures.
 It takes the current head of the tree/sub-tree and returns a list of the children
