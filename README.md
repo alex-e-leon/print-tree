@@ -1,4 +1,4 @@
-# print-tree
+# print-tree [![Build Status][build-badge]][build-status] [![Coverage Status][coverage-badge]][coverage-status]
 
 prints any js data structure as a tree
 
@@ -35,13 +35,13 @@ printTree(
 
 `printTree(tree, [printNode], [getChildren])`
 
-### Arguments
+## Arguments
 
-#### tree: *
+### tree: T
 
 The object to traverse.
 
-#### printNode: function<T>(node: T, branch: string): ?string
+### printNode: function<T>(node: T, branch: string): ?string
 
 A function to customize the output.
 You can pass in either:
@@ -50,7 +50,17 @@ You can pass in either:
 - a function that takes the current node and the branchGraphic and returns nothing -
     this lets you customize the ouput method
 
-#### getChildren: function<T>(node: T): Array<T>
+### getChildren: function<T>(node: T): Array<T>
 
 A function to help `print-tree` traverse custom data structures.
 It takes the current head of the tree/sub-tree and returns a list of the children
+
+<!-- Definitions -->
+
+[build-badge]: https://img.shields.io/travis/alex-e-leon/print-tree.svg
+
+[build-status]: https://travis-ci.org/alex-e-leon/print-tree
+
+[coverage-badge]: https://img.shields.io/codecov/c/github/alex-e-leon/print-tree.svg
+
+[coverage-status]: https://codecov.io/github/alex-e-leon/print-tree
