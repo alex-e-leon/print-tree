@@ -30,7 +30,7 @@ function printTree<T>(
 
     if (!isGraphHead) {
       const isChildOfLastBranch = branch.slice(-2) === '└─';
-      baseBranch = branch.slice(0, -2) + (isChildOfLastBranch ? '  ' : '| ');
+      baseBranch = branch.slice(0, -2) + (isChildOfLastBranch ? '  ' : '│ ');
     }
 
     const nextBranch = baseBranch + '├─';

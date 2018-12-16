@@ -41,7 +41,7 @@ test(
   [
     ['head'],
     ['├─┬ ', 'branchA'],
-    ['| └── ', 'branchC'],
+    ['│ └── ', 'branchC'],
     ['└── ', 'branchB'],
   ],
 );
