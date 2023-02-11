@@ -19,7 +19,7 @@
   },
   "devDependencies": {
     "@babel/register": "^7.4.4",
-    "ava": "^2.0.0",
+    "ava": "^5.2.0",
     "babel-cli": "^6.26.0",
     "babel-eslint": "^8.0.1",
     "babel-plugin-transform-flow-comments": "^6.22.0",
