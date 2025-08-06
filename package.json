@@ -24,7 +24,7 @@
     "babel-eslint": "^8.0.1",
     "babel-plugin-transform-flow-comments": "^6.22.0",
     "codecov": "^3.5.0",
-    "eslint": "^4.7.2",
+    "eslint": "^9.32.0",
     "eslint-config-airbnb-base": "^12.0.0",
     "eslint-plugin-ava": "^4.2.2",
     "eslint-plugin-flowtype": "^2.36.0",
